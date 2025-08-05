@@ -86,10 +86,11 @@ section {
 
 .home {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: wrap;
+    gap: 2rem;
+    padding: 8rem 9& 0;
 }
 
 .home-content {
@@ -127,9 +128,10 @@ span {
 .home-img img {
     position: relative;
     top: 2rem;
-    width: 16vw;
+    width: 35vw;
     border-radius: 50%;
     cursor: pointer;
+    top: 0;
 }
 
 .home-content p{
