@@ -176,7 +176,7 @@ span {
     padding: 1rem 2.8rem;
     background: var(--main-color);
     border-radius: 4rem;
-    font-size: 1.6rem;
+    font-size: 2dvb;
     color: #ffffff;
     border: 2px solid transparent;
     letter-spacing: 0.1rem;
@@ -190,4 +190,78 @@ span {
     background: var(--bg-color);
     color: var(--main-color);
     border: 2px solid var(--main-color);
+}
+
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: 'Youtuber';
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: '';
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid #f1f1f1;
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}   
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%
+    32%{
+        content: 'Computer Science Student';
+    }
+    33%,
+    66% {
+        content: 'Content Creator';
+    } 
+    67%,
+    100% {
+        content: 'Pickleball Player';
+    }
+}
+
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
 }
