@@ -305,6 +305,13 @@ span {
     margin: 2rem 0 rem;
 }
 
+.about-content,
+.about-img {
+  flex: 1;
+  max-width: 50%;
+}
+
+
 .about-content .text-animation span::before {
     content: 'Computer Science Student';
     color: var(--main-color);
@@ -409,19 +416,32 @@ span {
     flex-wrap: wrap;
 }
 
-.contact form .input-box input,
-.contact form .input-box textarea {
+.contact form .input-box input {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
     background-color: var(--bg-color);
-    border-radius: 50%;
+    border-radius: 0.5rem; 
+    border: 2px solid var(--main-color);
+    margin: 1rem 0;
+}
+
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
     border: 2px solid var(--main-color);
     margin: 1rem 0;
     resize: none;
 }
 
+
 .contact form .btn {
-    margin-top: 2rem;
+    display: block;
+    margin: 2rem auto 0;  
+    width: fit-content;   
 }
