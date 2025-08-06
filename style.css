@@ -259,3 +259,126 @@ span {
         width: calc(100% + 8px);
     }
 }
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background: var(--second-bg-color);
+    color: black
+}
+
+.about-img {
+    border-radius: 50%
+}
+
+.about-img img {
+    position: relative;
+    width: 30vw;
+    border-radius: 50%;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.heading {
+    text-align: center;
+    font-size: 8rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.5;
+
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 rem;
+}
+
+.about-content .text-animation span::before {
+    content: 'Computer Science Student';
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.about-content .text-animation span::after {
+    content: '';
+    background-color: var(--second-bg-color);
+    position: absolute;
+    width: calc(100% + 10px);
+    height: 100%;
+    border-left: 2px solid #f1f1f1;
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+    width: 50px;
+}
+
+.projects {
+    background: var(--bg-color);
+    color: black;
+}
+
+.projects h2 {
+    margin-bottom: 5rem;
+    color: black;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.projects-box {
+    border: 3px solid var(--main-color);
+    height: 300px;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.projects-box:hover {
+    background: var(--main-color);
+    color: #ffffff;
+    transform: scale(1.03);
+}
+
+.projects-box .projects-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: baseline;
+    padding: 5rem;
+}
+
+.projects-info h4 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.projects-info p {
+    margin-top: 2rem;
+    font-size: 20px;
+    font-weight: 400;
+    margin: auto;
+}
