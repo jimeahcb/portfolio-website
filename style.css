@@ -273,6 +273,10 @@ span {
     border-radius: 50%
 }
 
+.about .btn {
+    margin-top: 2rem;
+}
+
 .about-img img {
     position: relative;
     width: 30vw;
@@ -319,7 +323,7 @@ span {
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -328,7 +332,7 @@ span {
 
 ::-webkit-scrollbar-track {
     background-color: var(--bg-color);
-    width: 50px;
+    width: 40px;
 }
 
 .projects {
