@@ -305,6 +305,19 @@ footer {
   box-sizing: border-box;
 }
 
+.project-card a {
+  color: #3b7a57;           /* your custom link color */
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;    /* removes underline */
+  font-weight: 600;         /* optional, makes it bolder */
+}
+
+.project-card a:hover {
+  color: #333;           /* color when hovering */
+  text-decoration: underline; /* optional hover underline */
+}
+
 /* project arrows */
 .carousel-btn {
   position: absolute;
