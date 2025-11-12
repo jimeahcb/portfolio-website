@@ -121,44 +121,46 @@ navLinksFixed.forEach(link => {
   });
 });
 
-// active nav bar highlights
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
+document.addEventListener("DOMContentLoaded", () => {
+    // active nav bar highlights
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-function updateActiveLink() {
-    const scrollPos = window.scrollY + window.innerHeight * 0.45; 
-    let currentSection = sections[0].getAttribute("id");
+    function updateActiveLink() {
+        const scrollPos = window.scrollY + window.innerHeight * 0.45;
+        let currentSection = sections[0].getAttribute("id");
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-        currentSection = section.getAttribute("id");
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => link.classList.remove("active"));
+        const activeLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
+        if (activeLink) activeLink.classList.add("active");
     }
+
+    // run once on load
+    updateActiveLink();
+
+    // update on scroll
+    window.addEventListener("scroll", updateActiveLink);
+
+    // re-check after smooth scroll finishes
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveLink, 200);
     });
 
-    navLinks.forEach(link => link.classList.remove("active"));
-    const activeLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
-    if (activeLink) activeLink.classList.add("active");
-}
-
-// run once on load
-updateActiveLink();
-
-// update on scroll
-window.addEventListener("scroll", updateActiveLink);
-
-// re-check after smooth scroll finishes
-let scrollTimeout;
-window.addEventListener("scroll", () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(updateActiveLink, 200);
-});
-
-// make sure clicking a link triggers a recheck after scroll animation
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        setTimeout(updateActiveLink, 600);
+    // make sure clicking a link triggers a recheck after scroll animation
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            setTimeout(updateActiveLink, 600);
+        });
     });
 });
