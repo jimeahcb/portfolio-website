@@ -269,6 +269,29 @@ footer {
     filter: brightness(0);    /* black on transparent background */
 }
 
+/* github button */
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0.25rem 0rem;
+    margin-top: 0rem;       /* space above button */
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease; /* smooth scale */
+}   
+
+.github-btn:hover {
+    transform: scale(1.25);   /* subtle grow effect */
+    filter: brightness(1.1);  /* optional tiny brightness pop */
+}
+
+.github-btn .icon {
+    width: 35px;              /* bigger icon size */
+    height: 35px;
+    filter: brightness(0);    /* black on transparent background */
+}
+
 /* projects carousel */
 #projects h2 {
     text-align: center;
